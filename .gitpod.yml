@@ -5,7 +5,7 @@ tasks:
       npm install
       npm update
     command: |
-      ./vendor/bin/sail up
+      echo 'start command if needed'
 
 ports:
   # apache server
@@ -27,4 +27,3 @@ ports:
 vscode:
   extensions:
     - cweijan.vscode-mysql-client2
-    - onecentlin.laravel-blade
