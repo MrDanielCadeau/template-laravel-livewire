@@ -1,0 +1,30 @@
+tasks:
+  - init: |
+      composer install
+      composer update
+      npm install
+      npm update
+    command: |
+      ./vendor/bin/sail up
+
+ports:
+  # apache server
+  - port: 80
+    visibility: private
+    onOpen: open-preview
+  # mysql db
+  - port: 3306
+    visibility: private
+    onOpen: ignore
+  - port: 8080
+    visibility: private
+    onOpen: ignore
+  # mysql vscode extension
+  - port: 8828
+    visibility: private
+    onOpen: ignore
+
+vscode:
+  extensions:
+    - cweijan.vscode-mysql-client2
+    - onecentlin.laravel-blade
